@@ -83,3 +83,22 @@ header section div:nth-child(3) h2{
     font-size: 1.7rem;
     color: black;
 }
+#petCategory{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#petCategory div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    padding: 10px 17px;
+    border: 2px solid #9c9a9ab9;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+    cursor: pointer;
+}
+/* .active-category */
