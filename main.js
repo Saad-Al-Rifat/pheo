@@ -63,11 +63,15 @@ const renderPet = (pets) => {
         </div>
 
         <div class="pet-buttons">
-            <button><i class="fa-solid fa-thumbs-up"></i></button>
+            <button onclick="likedImage('${img}')"><i class="fa-solid fa-thumbs-up"></i></button>
             <button>Adopt</button>
             <button>Details</button>
         </div>
         </div>
         `;
     })
+}
+
+const likedImage = (img)=>{
+    console.log(img)
 }

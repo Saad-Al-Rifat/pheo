@@ -139,6 +139,7 @@ header section div:nth-child(3) h2{
     grid-column: 1/4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
 }
 .liked-img-section{
     border: 1px solid rgb(214, 213, 213);
