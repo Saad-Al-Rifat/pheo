@@ -131,21 +131,22 @@ header section div:nth-child(3) h2{
     border-radius: 6px;
 }
 .main{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     column-gap: 30px;
 }
 .pet-container{
-    grid-column: 1/4;
+    width: 75%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
 }
 .liked-img-section{
+    width: 25%;
     border: 1px solid rgb(214, 213, 213);
     padding: 10px;
     border-radius: 8px;
-    grid-column: 4/-1;
 }
 .pet {
     width: 320px;
@@ -213,4 +214,15 @@ header section div:nth-child(3) h2{
 
 .pet-buttons button:first-child {
     flex: 0.7;
+}
+.liked-img-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.liked-img-section img{
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
 }

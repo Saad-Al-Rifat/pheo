@@ -73,5 +73,7 @@ const renderPet = (pets) => {
 }
 
 const likedImage = (img)=>{
-    console.log(img)
+    const likedImgContainer = document.querySelector(".liked-img-section")
+    likedImgContainer.innerHTML += `<img src=${img}>`;
+    console.log(likedImgContainer)
 }
