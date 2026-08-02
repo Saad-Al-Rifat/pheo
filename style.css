@@ -88,12 +88,12 @@ header section div:nth-child(3) h2{
     justify-content: space-between;
     align-items: center;
 }
-#petCategory div{
+.basic-btn-style{
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 20px;
-    padding: 0px 17px;
+    padding: 5px 20px;
     border: 2px solid #9c9a9ab9;
     border-radius: 8px;
     font-size: 1.3rem;
@@ -105,5 +105,7 @@ header section div:nth-child(3) h2{
 .active-category{
     background-color: #a2d4d8;
     border: 2px solid #0E7A81;
+    height: 60px;
     border-radius: 30px;
+    transition: all 120ms ease;
 }

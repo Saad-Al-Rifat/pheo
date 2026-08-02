@@ -13,7 +13,7 @@ const renderCategories = (categories) => {
         const { id, category, category_icon: pet_img } = item;
         section.innerHTML +=
             `
-            <div class="category" id=${id}>
+            <div class="basic-btn-style category" id=${id}>
                 <img width="40px" src=${pet_img} alt="pet-img">
                 <p>${category}</p>
             </div>
@@ -30,6 +30,7 @@ const activeBtn = (buttons) => {
         item.addEventListener("click", (e)=>{
             const div = e.target.closest(".category");
             div.classList.add("active-category")
+            div.classList.remove(".basic-btn-style")
 
             const siblings = [...div.parentElement.children].filter( item => item != div);
             [...siblings].forEach(item => item.classList.remove('active-category'))
