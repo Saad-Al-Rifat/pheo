@@ -130,3 +130,17 @@ header section div:nth-child(3) h2{
     cursor: pointer;
     border-radius: 6px;
 }
+.main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+}
+.pet-container{
+    grid-column: 1/4;
+}
+.liked-img-section{
+    border: 1px solid rgb(214, 213, 213);
+    padding: 10px;
+    border-radius: 8px;
+    grid-column: 4/-1;
+}
