@@ -11,7 +11,6 @@ const renderCategories = (categories) => {
 
     categories.forEach(item => {
         const { id, category, category_icon: pet_img } = item;
-        console.log(id, category, pet_img)
         section.innerHTML +=
             `
             <div class="category" id=${id}>
@@ -20,4 +19,21 @@ const renderCategories = (categories) => {
             </div>
             `;
     });
+
+    const buttons = document.querySelectorAll(".category")
+    activeBtn(buttons)
+}
+// each buttons functions
+const activeBtn = (buttons) => {
+
+    buttons.forEach((item)=>{
+        item.addEventListener("click", (e)=>{
+            const div = e.target.closest(".category");
+            div.classList.add("active-category")
+
+            const siblings = [...div.parentElement.children].filter( item => item != div);
+            [...siblings].forEach(item => item.classList.remove('active-category'))
+        })
+    })
+    
 }
