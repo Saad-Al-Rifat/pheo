@@ -51,20 +51,22 @@ const renderPet = (pets) => {
         petContainer.innerHTML += 
         `
         <div class="pet">
-            <div>
-            <img src=${img}>
-            <p>${pet_name}</p>
-            <p>Breed: ${breed}</p>
-            <p>Birth: ${date_of_birth}</p>
-            <p>Gender: ${gender}</p>
-            <p>Price: ${price}</p>
-            </div>
+            <div class="pet-content">
+            <img src="${img}" alt="${pet_name}" class="pet-img">
 
-            <div>
-            <button></button>
+            <h3 class="pet-name">${pet_name}</h3>
+
+            <p><strong>Breed:</strong> ${breed}</p>
+            <p><strong>Birth:</strong> ${date_of_birth}</p>
+            <p><strong>Gender:</strong> ${gender}</p>
+            <p><strong>Price:</strong> $${price}</p>
+        </div>
+
+        <div class="pet-buttons">
+            <button>❤️</button>
             <button>Adopt</button>
             <button>Details</button>
-            </div>
+        </div>
         </div>
         `;
     })
