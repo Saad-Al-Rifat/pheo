@@ -63,7 +63,7 @@ const renderPet = (pets) => {
         </div>
 
         <div class="pet-buttons">
-            <button>❤️</button>
+            <button><i class="fa-solid fa-thumbs-up"></i></button>
             <button>Adopt</button>
             <button>Details</button>
         </div>
