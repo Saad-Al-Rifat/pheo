@@ -3,6 +3,11 @@
     const res = await fetch("https://openapi.programming-hero.com/api/peddy/categories");
     const { categories } = await res.json();
     renderCategories(categories);
+
+    // get all available pets data
+    const res2 = await fetch("https://openapi.programming-hero.com/api/peddy/pets")
+    const { pets } = await res2.json()
+    renderPet(pets)
 })();
 
 // fetch and render all pet categories
@@ -26,15 +31,41 @@ const renderCategories = (categories) => {
 // each buttons functions
 const activeBtn = (buttons) => {
 
-    buttons.forEach((item)=>{
-        item.addEventListener("click", (e)=>{
+    buttons.forEach((item) => {
+        item.addEventListener("click", (e) => {
             const div = e.target.closest(".category");
             div.classList.add("active-category")
             div.classList.remove(".basic-btn-style")
 
-            const siblings = [...div.parentElement.children].filter( item => item != div);
+            const siblings = [...div.parentElement.children].filter(item => item != div);
             [...siblings].forEach(item => item.classList.remove('active-category'))
         })
     })
-    
+
+}
+
+const renderPet = (pets) => {
+    const petContainer = document.querySelector(".pet-container")
+    pets.forEach((pet)=>{
+        const {breed, pet_name, price, gender, date_of_birth, image:img} = pet
+        petContainer.innerHTML += 
+        `
+        <div class="pet">
+            <div>
+            <img src=${img}>
+            <p>${pet_name}</p>
+            <p>Breed: ${breed}</p>
+            <p>Birth: ${date_of_birth}</p>
+            <p>Gender: ${gender}</p>
+            <p>Price: ${price}</p>
+            </div>
+
+            <div>
+            <button></button>
+            <button>Adopt</button>
+            <button>Details</button>
+            </div>
+        </div>
+        `;
+    })
 }
