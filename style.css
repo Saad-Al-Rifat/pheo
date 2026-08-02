@@ -109,3 +109,24 @@ header section div:nth-child(3) h2{
     border-radius: 30px;
     transition: all 120ms ease;
 }
+.sort-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px;
+}
+.sort-section p{
+    color: #3f3f3f;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.sort-section button{
+    background-color: #0E7A81;
+    color: white;
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
