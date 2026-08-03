@@ -1,68 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-html, body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: "Lato", sans-serif;
     padding: 0.5rem 1rem;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-nav div{
+
+nav div {
     display: flex;
     align-items: center;
     font-size: 2rem;
     cursor: pointer;
 }
-nav ul{
+
+nav ul {
     list-style: none;
     display: flex;
     column-gap: 4.8vw;
     font-size: 1.05rem;
     color: #747272;
 }
-nav ul li{
+
+nav ul li {
     cursor: pointer;
 }
-nav i{
+
+nav i {
     font-size: 1.7rem;
     cursor: pointer;
 }
-header section{
+
+header section {
     margin: 2rem 0;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-header  section  div:nth-child(1){
+
+header section div:nth-child(1) {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     align-items: center;
     width: 50%;
 }
-header  section  div:nth-child(1) p{
+
+header section div:nth-child(1) p {
     color: #3f3f3f;
     font-size: 1.02rem;
 }
-header  section  div:nth-child(1) h1{
+
+header section div:nth-child(1) h1 {
     font-size: 3rem;
     color: #131313;
 }
-header  section span{
+
+header section span {
     color: #747272;
     font-size: 1.1rem;
 }
-header  section  div:nth-child(1) button{
+
+header section div:nth-child(1) button {
     padding: 13px 30px;
     background-color: #0E7A81;
     color: white;
@@ -70,25 +83,30 @@ header  section  div:nth-child(1) button{
     border-radius: 9px;
     cursor: pointer;
 }
-header section img{
+
+header section img {
     width: 70%;
 }
-header section div:nth-child(3){
+
+header section div:nth-child(3) {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
-header section div:nth-child(3) h2{
+
+header section div:nth-child(3) h2 {
     margin-bottom: 16px;
     font-size: 1.7rem;
     color: black;
 }
-#petCategory{
+
+#petCategory {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.basic-btn-style{
+
+.basic-btn-style {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,25 +120,29 @@ header section div:nth-child(3) h2{
     cursor: pointer;
     height: 60px;
 }
-.active-category{
+
+.active-category {
     background-color: #a2d4d8;
     border: 2px solid #0E7A81;
     height: 60px;
     border-radius: 30px;
     transition: all 120ms ease;
 }
-.sort-section{
+
+.sort-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 50px 0px;
 }
-.sort-section p{
+
+.sort-section p {
     color: #3f3f3f;
     font-size: 2rem;
     font-weight: 600;
 }
-.sort-section button{
+
+.sort-section button {
     background-color: #0E7A81;
     color: white;
     font-size: 1.1rem;
@@ -130,32 +152,36 @@ header section div:nth-child(3) h2{
     cursor: pointer;
     border-radius: 6px;
 }
-.main{
+
+.main {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     column-gap: 30px;
 }
-.pet-container{
+
+.pet-container {
     width: 75%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 10px;
 }
-.liked-img-section{
+
+.liked-img-section {
     width: 25%;
     border: 1px solid rgb(214, 213, 213);
     padding: 10px;
     border-radius: 8px;
 }
+
 .pet {
     width: 320px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
     display: flex;
     flex-direction: column;
     transition: .25s;
@@ -163,7 +189,7 @@ header section div:nth-child(3) h2{
 
 .pet:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .15);
 }
 
 .pet-content {
@@ -216,14 +242,84 @@ header section div:nth-child(3) h2{
 .pet-buttons button:first-child {
     flex: 0.7;
 }
-.liked-img-section{
+
+.liked-img-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
-.liked-img-section img{
+
+.liked-img-section img {
     width: 100%;
     height: 80px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+#details-modal {
+    width: min(90vw, 500px);
+    max-height: 90vh;
+    overflow: hidden;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #333;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: fit-content;
+}
+
+#details-modal img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+}
+#details-modal ul{
+    list-style: none;
+}
+#details-modal .pet-name{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    margin-top: 10px;
+}
+.modal-cancel-btn{
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0E7A81;
+    background-color: #aefaff;
+    padding: 10px 15px;
+    margin: 10px 0px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 200ms ease;
+}
+.modal-cancel-btn:hover{
+    background-color: #89e2e9;
+}
+.major-details{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    column-gap: 30px;
+    color: rgb(100, 100, 100);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.major-details li{
+    margin-bottom: 3px;
+}
+.details-heading{
+    font-size: 1.3rem;
+    color: black;
+    font-weight: 700;
+    margin: 10px 0px;
 }

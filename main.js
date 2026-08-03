@@ -63,10 +63,10 @@ const renderPet = (pets) => {
 
             <h3 class="pet-name">${pet_name}</h3>
 
-            <p><strong>Breed:</strong> ${breed}</p>
+            <p><strong>Breed:</strong> ${breed || "unknown"}</p>
             <p><strong>Birth:</strong> ${date_of_birth}</p>
             <p><strong>Gender:</strong> ${gender}</p>
-            <p><strong>Price:</strong> $${price}</p>
+            <p><strong>Price:</strong> ${price ? "$"+price : "call for price"}</p>
         </div>
 
         <div class="pet-buttons">
@@ -105,25 +105,25 @@ const showDetails = async (petId)=>{
 
     modal.innerHTML = 
     `
-    <div class="modal-body">
+    <div>
         <img src=${image}>
-        <p>${pet_name}</p>
-        <div>
+        <p class="pet-name">${pet_name}</p>
+        <div class="major-details">
             <ul>
-                <li>Breed: ${breed}</li>
+                <li>Breed: ${breed || "Unknown"}</li>
                 <li>Gender: ${gender}</li>
                 <li>Vaccinated status: ${vaccinated_status}</li>
             </ul>
             <ul>
                 <li>Birth: ${date_of_birth}</li>
-                <li>Price: ${price}</li>
+                <li>Price: ${price ? "$"+price : "call for price"}</li>
             </ul>
         </div>
         <hr>
         <div>
-            <p>Details Information</p>
+            <p class="details-heading">Details Information</p>
             <p>${pet_details}</p>
-            <button onclick="cancelModal()">Cancel</button>
+            <button class="modal-cancel-btn" onclick="cancelModal()">Cancel</button>
         </div>
     </div>
     `;
