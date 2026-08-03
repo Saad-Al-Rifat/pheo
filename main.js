@@ -31,6 +31,8 @@ const renderCategories = (categories) => {
 // each buttons functions
 const activeBtn = (buttons) => {
 
+
+
     buttons.forEach((item) => {
         item.addEventListener("click", (e) => {
             const div = e.target.closest(".category");
@@ -39,6 +41,9 @@ const activeBtn = (buttons) => {
 
             const siblings = [...div.parentElement.children].filter(item => item != div);
             [...siblings].forEach(item => item.classList.remove('active-category'))
+
+            // fetch pet by category function trigger
+            fetchByCategory(div.children[1].innerText.toLowerCase())
         })
     })
 
@@ -46,10 +51,12 @@ const activeBtn = (buttons) => {
 
 const renderPet = (pets) => {
     const petContainer = document.querySelector(".pet-container")
-    pets.forEach((pet)=>{
-        const {breed, pet_name, price, gender, date_of_birth, image:img} = pet
-        petContainer.innerHTML += 
-        `
+    petContainer.innerHTML = ``;
+    if (pets.length) {
+        pets.forEach((pet) => {
+            const { breed, pet_name, price, gender, date_of_birth, image: img } = pet
+            petContainer.innerHTML +=
+                `
         <div class="pet">
             <div class="pet-content">
             <img src="${img}" alt="${pet_name}" class="pet-img">
@@ -69,11 +76,22 @@ const renderPet = (pets) => {
         </div>
         </div>
         `;
-    })
+        })
+    }else{
+        petContainer.innerHTML = ``;
+    }
 }
 
-const likedImage = (img)=>{
+const likedImage = (img) => {
     const likedImgContainer = document.querySelector(".liked-img-section")
     likedImgContainer.innerHTML += `<img src=${img}>`;
     console.log(likedImgContainer)
+}
+
+// render pets by category
+const fetchByCategory = async (category) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
+    const res2 = await res.json();
+    const pets = res2.data
+    renderPet(pets)
 }
