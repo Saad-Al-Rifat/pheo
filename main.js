@@ -54,7 +54,7 @@ const renderPet = (pets) => {
     petContainer.innerHTML = ``;
     if (pets.length) {
         pets.forEach((pet) => {
-            const { breed, pet_name, price, gender, date_of_birth, image: img } = pet
+            const { breed, pet_name, price, gender, date_of_birth, image: img, petId} = pet
             petContainer.innerHTML +=
                 `
         <div class="pet">
@@ -72,7 +72,7 @@ const renderPet = (pets) => {
         <div class="pet-buttons">
             <button onclick="likedImage('${img}')"><i class="fa-solid fa-thumbs-up"></i></button>
             <button>Adopt</button>
-            <button>Details</button>
+            <button onclick=showDetails(${petId})>Details</button>
         </div>
         </div>
         `;
@@ -94,4 +94,44 @@ const fetchByCategory = async (category) => {
     const res2 = await res.json();
     const pets = res2.data
     renderPet(pets)
+}
+
+const showDetails = async (petId)=>{
+    const modal = document.querySelector("#details-modal");
+
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`);
+    const petDetails = await res.json();
+    const {price, vaccinated_status, pet_name, pet_details, image, gender, date_of_birth, breed} = petDetails.petData;
+
+    modal.innerHTML = 
+    `
+    <div class="modal-body">
+        <img src=${image}>
+        <p>${pet_name}</p>
+        <div>
+            <ul>
+                <li>Breed: ${breed}</li>
+                <li>Gender: ${gender}</li>
+                <li>Vaccinated status: ${vaccinated_status}</li>
+            </ul>
+            <ul>
+                <li>Birth: ${date_of_birth}</li>
+                <li>Price: ${price}</li>
+            </ul>
+        </div>
+        <hr>
+        <div>
+            <p>Details Information</p>
+            <p>${pet_details}</p>
+            <button onclick="cancelModal()">Cancel</button>
+        </div>
+    </div>
+    `;
+
+    modal.showModal();
+}
+
+const cancelModal = ()=>{
+    const modal = document.querySelector("#details-modal");
+    modal.close();
 }
