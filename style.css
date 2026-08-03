@@ -260,7 +260,7 @@ header section div:nth-child(3) h2 {
     width: min(90vw, 500px);
     max-height: 90vh;
     overflow: hidden;
-    padding: 20px;
+    padding: 35px;
     border: none;
     border-radius: 12px;
     background: white;
