@@ -296,7 +296,8 @@ header section div:nth-child(3) h2 {
     color: #0E7A81;
     background-color: #aefaff;
     padding: 10px 15px;
-    margin: 10px 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     cursor: pointer;
     margin-top: 15px;
     transition: background-color 200ms ease;
