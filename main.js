@@ -78,7 +78,7 @@ const renderPet = (pets) => {
         `;
         })
     }else{
-        petContainer.innerHTML = ``;
+        petContainer.innerHTML = `<img style="width: 100%; height: auto; object-fit: cover;" src="images/error.webp">`;
     }
 }
 
