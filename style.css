@@ -140,7 +140,8 @@ header section div:nth-child(3) h2{
     width: 75%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    row-gap: 30px;
+    column-gap: 10px;
 }
 .liked-img-section{
     width: 25%;
