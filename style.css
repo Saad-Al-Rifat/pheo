@@ -259,8 +259,9 @@ header section div:nth-child(3) h2 {
 #details-modal {
     width: min(90vw, 500px);
     max-height: 90vh;
-    overflow: hidden;
-    padding: 35px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 20px;
     border: none;
     border-radius: 12px;
     background: white;
@@ -277,7 +278,6 @@ header section div:nth-child(3) h2 {
     width: 100%;
     height: 250px;
     border-radius: 5px;
-    margin-top: 10px;
 }
 #details-modal ul{
     list-style: none;
@@ -299,7 +299,7 @@ header section div:nth-child(3) h2 {
     padding: 10px 15px;
     margin-top: 10px;
     cursor: pointer;
-    margin: 17px 0px;
+    margin-top: 40px;
     transition: background-color 200ms ease;
 }
 .modal-cancel-btn:hover{
