@@ -135,3 +135,12 @@ const cancelModal = ()=>{
     const modal = document.querySelector("#details-modal");
     modal.close();
 }
+
+// sort functionality
+const sort = async ()=>{
+    const res = await fetch("https://openapi.programming-hero.com/api/peddy/pets");
+    const res2 = await res.json();
+    const pets = res2.pets;
+    const sortedPets = pets.sort((a,b)=> b.price - a.price)
+    renderPet(sortedPets)
+}
