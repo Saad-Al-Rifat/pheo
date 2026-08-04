@@ -258,9 +258,9 @@ header section div:nth-child(3) h2 {
 
 #details-modal {
     width: min(90vw, 500px);
-    max-height: 90vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    /* max-height: 90vh; */
+    overflow: hidden;
+    /* overflow-y: auto; */
     padding: 20px;
     border: none;
     border-radius: 12px;
