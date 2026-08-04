@@ -299,7 +299,7 @@ header section div:nth-child(3) h2 {
     padding: 10px 15px;
     margin-top: 10px;
     cursor: pointer;
-    margin-top: 15px;
+    margin: 17px 0px;
     transition: background-color 200ms ease;
 }
 .modal-cancel-btn:hover{
